@@ -1,0 +1,15 @@
+A = imread('penguins.jpg'); 
+subplot(2,2,1); 
+imshow(A); 
+title('Input Image'); 
+PSF=fspecial('gaussian',5,5); 
+B=imfilter(A,PSF,'symmetric','conv'); 
+BPN=imnoise(B,'gaussian',0,0.002); 
+subplot(2,2,2); 
+imshow(BPN); 
+title('Blurred and Noisy Image'); 
+% Deblurring 
+DB=deconvlucy(B,PSF,5); 
+subplot(2,2,3); 
+imshow(DB); 
+title('Deblurred Image');
