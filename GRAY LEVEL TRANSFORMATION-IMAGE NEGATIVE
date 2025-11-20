@@ -1,0 +1,15 @@
+A = imread('penguine.jpg');
+
+subplot(2,2,1);
+imshow(A);
+title('Colour Image');
+
+B = rgb2gray(A);    % Correct function name
+subplot(2,2,2);
+imshow(B);
+title('Gray Scale Image');
+
+C = 255 - B;        % Negative
+subplot(2,2,3);
+imshow(C);
+title('Image Negative');
