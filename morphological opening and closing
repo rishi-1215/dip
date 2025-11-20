@@ -1,0 +1,17 @@
+X = imread('flower.jpg'); 
+subplot(2,2,1); 
+imshow(X); 
+title('Input Image'); 
+A=rgb2gray(X); 
+subplot(2,2,2); 
+imshow(A); 
+title('Converted Gray scale Image'); 
+SE = strel('disk',5); 
+B = imopen(A,SE); 
+subplot(2,2,3); 
+imshow(B); 
+title('Opening in Image'); 
+C = imclose(A,SE); 
+subplot(2,2,4); 
+imshow(C); 
+title('Closing in Image');
