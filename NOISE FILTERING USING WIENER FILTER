@@ -1,0 +1,17 @@
+X = imread('Bird.jpg'); 
+subplot(2,2,1); 
+imshow(X); 
+title('Input Image'); 
+A=rgb2gray(X); 
+subplot(2,2,2); 
+imshow(A); 
+title('Converted Gray scale Image'); 
+%Add Gaussian noise to the image 
+N = imnoise(A,'gaussian',0,0.025); 
+subplot(2,2,3); 
+imshow(N); 
+title('Image with Added Gaussian Noise'); 
+K = wiener2(N,[5 5]); 
+subplot(2,2,4); 
+imshow(K); 
+title('Image with Noise Removed by Wiener Filter'); 
