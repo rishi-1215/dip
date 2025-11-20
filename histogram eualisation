@@ -1,0 +1,21 @@
+A = imread('Desert.jpg');
+
+I = rgb2gray(A);     % Correct function
+
+subplot(2,2,1);
+imshow(I);
+title('Gray scale image');
+
+subplot(2,2,2);
+imhist(I,64);
+title('Histogram plot of Gray scale image');
+
+J = histeq(I);       % Histogram equalization
+
+subplot(2,2,3);
+imshow(J);
+title('Contrast Enhanced image');
+
+subplot(2,2,4);
+imhist(J,64);
+title('Histogram of contrast enhanced image');
