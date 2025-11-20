@@ -1,0 +1,16 @@
+A = imread('Tulips.jpg'); 
+subplot(2,2,1); 
+imshow(A); 
+title('Input-Color image'); 
+subplot(2,2,2); 
+B=imadjust(A,[.3 .7],[]); 
+imshow(B); 
+title('Contrast Enhanced Color image'); 
+C = rgb2gray(A); 
+subplot(2,2,3); 
+imshow(C); 
+title('Input-Gray Scale Image'); 
+subplot(2,2,4); 
+D=imadjust(C,[.3 .7],[]); 
+imshow(C); 
+title('Contrast Enhanced Gray scale Image'); 
