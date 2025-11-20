@@ -1,0 +1,17 @@
+X = imread('xray.jpg'); 
+subplot(2,2,1); 
+imshow(X); 
+title('Input Image'); 
+A=rgb2gray(X); 
+subplot(2,2,2); 
+imshow(A); 
+title('Converted Gray scale Image'); 
+SE = strel('ball',5,5); 
+B = imdilate(A,SE); 
+subplot(2,2,3); 
+imshow(B); 
+title('Dilated Image'); 
+C = imerode(A,SE); 
+subplot(2,2,4); 
+imshow(C); 
+title('Eroded Image'); 
